@@ -1668,7 +1668,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: var(--gap-base);
+    gap: 0;
 }
 
 .photo-3-icon {
@@ -1837,13 +1837,12 @@ body {
     height: 100%;
     top: 0;
     bottom: 0;
-    left: 0;
-    overflow: hidden;
 }
 
 .photo-7-icon {
-    width: 145.38%;
-    right: -45.38%;
+    width: 747px;
+    right: 0;
+    min-width: 747px;
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
@@ -1860,7 +1859,6 @@ body {
     left: calc(50% - 134.69px);
     width: 269.39px;
     height: 152.52px;
-    opacity: 0.15;
 }
 
 .vector-icon10,
@@ -1904,7 +1902,7 @@ body {
 .text-input-container6 {
     position: absolute;
     bottom: 32.01px;
-    left: 472px;
+    right: 55px;
     width: 219.39px;
     height: 107.51px;
 }
@@ -1914,7 +1912,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
 }
 
 .art-for-export2 {
@@ -1925,7 +1922,6 @@ body {
     background-color: var(--base-50);
     border-top: 1px solid var(--petroleum-graphite-50);
     border-right: 1px solid var(--petroleum-graphite-50);
-    border-bottom: 1px solid var(--petroleum-graphite-50);
     box-sizing: border-box;
 }
 
@@ -2521,7 +2517,7 @@ body {
 .promo-container {
     align-self: stretch;
     background-color: var(--petroleum-graphite-source);
-    height: 591px;
+    height: 600px;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -2557,7 +2553,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: var(--gap-xs);
+    gap: 9px;
 }
 
 .text37 {
@@ -2587,7 +2583,7 @@ body {
     width: 1176px;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--gap-13xl);
+    gap: 22px;
     font-size: var(--bold-upper-size);
     color: var(--petroleum-graphite-source);
 }
@@ -2599,7 +2595,7 @@ body {
 
 .faq-container {
     background-color: var(--base-50);
-    height: 1452px;
+    height: auto;
     overflow: hidden;
     flex-shrink: 0;
     flex-direction: column;
@@ -2684,7 +2680,7 @@ body {
     justify-content: flex-start;
     padding: 0 0 var(--padding-5xl);
     box-sizing: border-box;
-    gap: var(--gap-13xl);
+    gap: 29px;
 }
 
 .photo-7-icon3,
@@ -3128,21 +3124,83 @@ body {
 }
 
 .news-slider {
-    left: -138%;
+    left: -137%;
 }
 .advantages-slider-wrapper {
-    margin-left: -37%;
+    margin-left: -38.2%;
+}
+.advantages-container {
+    gap: 29px;
 }
 
 .partners-slider-wrapper .swiper-slide {
     max-width: 294px;
 }
 
-
-
-
-
-
+.accardion-container.active .accardion-contents {
+    display: flex !important;
+}
+.accardion-heading > img {
+    transition: all 0.5s;
+}
+.accardion-heading.active > img {
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+.accordion:nth-of-type(2) {
+    padding-top: 19px;
+}
+.text37 {
+    display: block;
+    max-height: 0;
+    font-size: 0;
+    color: var(--petroleum-graphite-source, #191919);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+    transition: all 0.5s ease-out;
+}
+.head-container3 {
+    cursor: pointer;
+}
+.head-container3:hover + .text37{
+    max-height: 100%;
+    font-size: 0;
+    transition: all 0.5s ease-out;
+    font-size: 18px;
+}
+.head-container3 .text36 {
+    transition: all 0.5s ease-out;
+}
+.head-container3:hover .text36 {
+    transition: all 0.5s ease-out;
+    color: #DD5F43;
+}
+.head-container3:hover .new-icon17 {
+    opacity: 0;
+    position: relative;
+}
+.head-container3:hover .text36::after {
+    content: "";
+    background: url(../img/new_icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: -48px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    transition: all 0.5s ease-out;
+}
+.head-container3 .seoarator {
+    transition: all 0.5s ease-out;
+}
+.head-container3:hover .seoarator {
+    border-top: 1px solid #DD5F43;
+    transition: all 0.5s ease-out;
+}
 
 
 
