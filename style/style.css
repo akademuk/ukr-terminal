@@ -568,6 +568,10 @@ body {
     text-transform: uppercase;
 }
 
+.advantages-slider-wrapper .swiper-slide {
+    max-width: 376px;
+}
+
 .bookmarksimple-icon {
     position: absolute;
     margin: 0 !important;
@@ -1740,7 +1744,6 @@ body {
 
 .slider1 {
     align-self: stretch;
-    overflow-x: auto;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -1748,6 +1751,49 @@ body {
     gap: var(--gap-5xl);
     font-size: var(--bold-upper-size);
     color: var(--petroleum-graphite-source);
+}
+
+.advantages-pagination .swiper-pagination-bullet {
+    margin: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--petroleum-graphite-15, rgba(25, 25, 25, 0.15));
+    border-radius: 0;
+}
+
+.advantages-pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.news-pagination .swiper-pagination-bullet {
+    margin: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--petroleum-graphite-15, rgba(25, 25, 25, 0.15));
+    border-radius: 0;
+}
+
+.news-pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content !important;
+
+}
+
+.news-slider-wrapper .swiper-slide {
+    max-width: 276px;
+}
+
+.advantages-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--flaming-orange-500, #DD5F43);
+}
+
+.news-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--flaming-orange-500, #DD5F43);
 }
 
 .slider-and-navigation {
@@ -2682,7 +2728,6 @@ body {
 
 .slider3 {
     align-self: stretch;
-    overflow-x: auto;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -2793,7 +2838,6 @@ body {
 }
 
 .slider-line {
-    overflow-x: auto;
     flex-direction: row;
     justify-content: center;
 }
@@ -2806,6 +2850,7 @@ body {
     padding: 0 52px var(--padding-109xl);
     box-sizing: border-box;
     z-index: 2;
+    overflow: hidden;
 }
 
 .slogan,
@@ -3081,6 +3126,68 @@ body {
     color: var(--base-source);
     font-family: var(--raleway-16px-regular);
 }
+
+.news-slider {
+    left: -138%;
+}
+.advantages-slider-wrapper {
+    margin-left: -37%;
+}
+
+.partners-slider-wrapper .swiper-slide {
+    max-width: 294px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 1279px) {
