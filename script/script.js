@@ -1,8 +1,9 @@
+// Слайдер Наші переваги
 const advantages = new Swiper('.advantages-slider', {
     slidesPerView: "auto",
     spaceBetween: 24,
     centeredSlides: true,
-    loop: false, // Отключение бесконечной петли
+    loop: false, 
     navigation: {
         nextEl: ".advantages-next",
         prevEl: ".advantages-prev",
@@ -13,12 +14,11 @@ const advantages = new Swiper('.advantages-slider', {
       },
 });
 
-
+// Слайдер Новини компанії
 const news = new Swiper('.news-slider', {
     slidesPerView: "auto",
     spaceBetween: 24,
-    centeredSlides: true,
-    loop: false, // Отключение бесконечной петли
+    loop: true,
     navigation: {
         nextEl: ".news-next",
         prevEl: ".news-prev",
@@ -29,14 +29,34 @@ const news = new Swiper('.news-slider', {
       },
 });
 
-const partners = new Swiper('.partners-slider', {
-    slidesPerView: "auto",
-    spaceBetween: 0,
-
-    loop: false, // Отключение бесконечной петли
+// Слайдер на hero экране
+const widget = new Swiper('.animation-widget1', {
+  slidesPerView: 1,
+  loop: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  effect: 'fade', // Эффект затухания
 });
 
+// Слайдер на hero экране
+const widget1 = new Swiper('.animation-widget', {
+  slidesPerView: 1,
+  loop: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  effect: 'slide', // Эффект затухания
+});
 
+// Слайдер партнеры
+const partners = new Swiper('.partners-slider', {
+  slidesPerView: "auto",
+  spaceBetween: 0,
+  loop: false, 
+});
 
 // Аккардион
 $(document).ready(() => {
@@ -74,3 +94,105 @@ $(document).ready(() => {
         }
     });
 });
+
+// Выезжает блок на hero экране
+document.addEventListener('DOMContentLoaded', () => {
+    const widget = document.querySelector('.animation-widget1');
+    const animationDelay = 3000;
+    setTimeout(() => {
+      widget.style.transform = 'translateX(0%)';
+    }, animationDelay);
+});
+
+// Анимация на hero экране
+document.addEventListener('DOMContentLoaded', () => {
+    const gifAnimation = document.getElementById('gifAnimation');
+    gifAnimation.classList.add('show-animation');
+    setTimeout(() => {
+      gifAnimation.classList.remove('show-animation');
+      gifAnimation.classList.add('hide-animation');
+    }, 3000);
+});
+  
+// Вывести время и дату
+function getCurrentDateTime() {
+  const now = new Date();
+  
+  const daysOfWeek = ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+  const months = ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'];
+  
+  const dayOfWeek = daysOfWeek[now.getDay()];
+  const dayOfMonth = now.getDate();
+  const month = months[now.getMonth()];
+  
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  
+  const formattedDate = `${dayOfWeek}, ${dayOfMonth} ${month}`;
+  const formattedTime = `${hours}:${minutes}:${seconds}`;
+  
+  return { formattedDate, formattedTime };
+}
+function updateCurrentDateTime() {
+  const dateElements = document.querySelectorAll('.name-link:first-child');
+  const timeElements = document.querySelectorAll('.name-link:last-child');
+
+  const { formattedDate, formattedTime } = getCurrentDateTime();
+
+  // Обновляем каждый элемент с классом .name-link
+  dateElements.forEach((element) => {
+    element.textContent = formattedDate;
+  });
+
+  timeElements.forEach((element) => {
+    element.textContent = formattedTime;
+  });
+}
+// Обновляем текущую дату и время при загрузке страницы
+updateCurrentDateTime();
+// Обновляем текущую дату и время каждую секунду
+setInterval(updateCurrentDateTime, 1000);
+
+
+// Бургер меню
+   document.querySelectorAll('.burger-link-close').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.burger-icon').classList.remove('open');
+        document.querySelector('.burger-menu').classList.remove('open');
+        document.querySelector('.body').classList.remove('open');
+    });
+});
+document.querySelector('.burger-icon').addEventListener('click', () => {
+    document.querySelector('.burger-icon').classList.toggle('open');
+    document.querySelector('.burger-menu').classList.toggle('open');
+    document.querySelector('.body').classList.toggle('open');
+});
+// --------------------------------------------------------------------
+  
+
+
+const animationWidget = document.getElementById('animation-widget1');
+const widgetBar = document.getElementById('widget-bar');
+
+// Функция для проверки прокрутки и управления видимостью
+function handleScroll() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop >= 600) {
+    animationWidget.style.display = 'none';
+    widgetBar.style.display = 'block';
+  } else {
+    animationWidget.style.display = 'block';
+    widgetBar.style.display = 'none';
+  }
+}
+
+// Вызываем функцию при прокрутке страницы
+window.addEventListener('scroll', handleScroll);
+
+// Вызываем функцию при загрузке страницы для начального состояния
+window.addEventListener('load', handleScroll);
+
+// --------------------------------------------------------------------
+
