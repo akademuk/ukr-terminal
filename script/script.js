@@ -196,3 +196,79 @@ window.addEventListener('load', handleScroll);
 
 // --------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+function animateCards() {
+  const cards = document.querySelectorAll('#card-container .cards');
+  let isScrollingDown = false;
+
+  window.addEventListener('scroll', function() {
+    const rect = cards[0].getBoundingClientRect();
+    isScrollingDown = rect.top >= 0;
+
+    cards.forEach(function(card, index) {
+      if (isScrollingDown) {
+        card.classList.add('animate__animated', 'animate__fadeInLeft');
+        card.style.animationDelay = `${index * 0.2}s`;
+      } else {
+        card.classList.remove('animate__animated', 'animate__fadeInLeft');
+      }
+    });
+  });
+}
+
+// Вызываем функцию для анимации карточек
+animateCards();
+
+
+
+const elementsToAnimate = document.querySelectorAll('.arguments-line');
+
+elementsToAnimate.forEach((element, index) => {
+  new Waypoint({
+    element: element,
+    handler: function(direction) {
+      if (direction === 'down') {
+        element.classList.add('animate');
+      } else {
+        element.classList.remove('animate');
+      }
+    },
+    offset: 'bottom-in-view'  // Элемент появится, когда его нижняя часть будет видна в окне браузера
+  });
+});
+
+
+
+
+
+  // Плавный переход к якорю 
+    $('a[href^="#"]').on('click', function (event) {
+      event.preventDefault();
+      var target = $(this.hash);
+      if (target.length) {
+          $('html, body').animate({
+              scrollTop: target.offset().top
+          }, 800);
+      }
+  });
+
+
+
+
+
+
+
+
+  // --------------------------------------------------------------------

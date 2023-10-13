@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
   <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" href="style/global.css">
   <link rel="stylesheet" href="style/style.css">
@@ -47,22 +50,22 @@
               <a href="#">головна</a>
             </li>
             <li>
-              <a href="#">Переваги</a>
+              <a href="#advantages">Переваги</a>
             </li>
             <li>
-              <a href="#">Про компанію</a>
+              <a href="#about-us">Про компанію</a>
             </li>
             <li>
               <a href="#">реквізити</a>
             </li>
             <li>
-              <a href="#">FAQ</a>
+              <a href="#faq">FAQ</a>
             </li>
             <li>
-              <a href="#">Блог</a>
+              <a href="blog.html">Блог</a>
             </li>
             <li>
-              <a href="#">Контакти</a>
+              <a href="#footer">Контакти</a>
             </li>
           </ul>
           <div class="collapsed-menu">
@@ -159,7 +162,9 @@
 
     <section class="hero-container">
       <div class="background-video-loop">
-        <div class="photo-1"></div>
+        <video autoplay muted loop preload="auto" playsinline>
+            <source src="img/1279x650.mp4" type="video/mp4">
+        </video>
       </div>
       <img class="background-elements-icon" alt="image" src="img/background-elements.svg">
       <div class="left-container">
@@ -309,7 +314,7 @@
   
                       <div class="value">7%</div>
                     </div>
-                    <img class="new-icon5" alt="image" src="img/new-icon8.svg">
+                    <img class="new-icon3" alt="image" src="img/new-icon8.svg">
                   </div>
                 </div>
               </div>
@@ -322,8 +327,8 @@
       </div>
     </section>
 
-    <section class="advantages-of-the-container">
-      <div class="cards">
+    <section class="advantages-of-the-container" id="card-container">
+      <div class="cards animate__animated animate__bounce">
         <b class="position">10+</b>
         <div class="lower-container3">
           <div class="logo">
@@ -335,7 +340,7 @@
           </div>
         </div>
       </div>
-      <div class="cards">
+      <div class="cards animate__animated animate__bounce">
         <b class="position">95%</b>
         <div class="lower-container3">
           <div class="logo">
@@ -349,7 +354,7 @@
           </div>
         </div>
       </div>
-      <div class="cards">
+      <div class="cards animate__animated animate__bounce">
         <b class="position">24/7</b>
         <div class="lower-container3">
           <div class="logo">
@@ -363,7 +368,7 @@
           </div>
         </div>
       </div>
-      <div class="cards">
+      <div class="cards animate__animated animate__bounce">
         <b class="position">50+</b>
         <div class="lower-container3">
           <div class="logo">
@@ -379,7 +384,7 @@
       </div>
     </section>
 
-    <section class="useful-container">
+    <section class="useful-container" id="useful">
       <div class="heading-container">
         <div class="left-container4">
           <div class="head-title">
@@ -519,7 +524,7 @@
       </div>
     </section>
 
-    <section class="interruption">
+    <section class="interruption" id="interruption">
       <div class="background-video-loop">
         <img class="photo-2-icon" alt="" src="img/photo-2@2x.png" />
       </div>
@@ -535,7 +540,7 @@
       </div>
     </section>
 
-    <section class="advantages-container">
+    <section class="advantages-container" id="advantages">
       <div class="heading-container1">
         <div class="head-title">
           <img class="new-icon17" alt="image" src="img/new-icon11.svg">
@@ -657,7 +662,7 @@
       </div>
     </section>
 
-    <section class="cta-container">
+    <section class="cta-container" id="cta">
       <div class="content4">
         <div class="left-column">
           <div class="art-for-export2">
@@ -753,7 +758,7 @@
       </div>
     </section>
 
-    <section class="about-us-container">
+    <section class="about-us-container" id="about-us">
       <div class="separator3"></div>
       <div class="left-column1">
         <div class="icon-and-logo">
@@ -808,7 +813,7 @@
       </div>
     </section>
 
-    <section class="promo-container">
+    <section class="promo-container" id="promo">
       <img class="art-for-export3" alt="image" src="img/art-for-export2@2x.png">
 
       <div class="text-and-button-container">
@@ -823,10 +828,10 @@
           </div>
           <div class="stats-base-button2">
             <div class="base-button">
-              <img class="left-icon11" alt="image" src="img/left-icon8.svg">
-
-              <div class="text">Обговорити партнерство</div>
-              <img class="right-icon11" alt="image" src="img/right-icon4.svg">
+              <a class="text" href="#">
+                Обговорити партнерство
+                <img class="right-icon11" alt="image" src="img/right-icon4.svg">
+              </a>
             </div>
           </div>
         </div>
@@ -856,7 +861,7 @@
       </div>
     </section>
 
-    <section class="faq-container">
+    <section class="faq-container" id="faq">
       <div class="heading-container1">
         <div class="head-title">
           <img class="new-icon17" alt="image" src="img/new-icon11.svg">
@@ -984,7 +989,7 @@
       </div>
     </section>
 
-    <section class="news-container">
+    <section class="news-container" id="news">
       <div class="heading-container1">
         <div class="head-title">
           <img class="new-icon17" alt="image" src="img/new-icon11.svg">
@@ -1261,7 +1266,7 @@
       </div>
     </section>
 
-    <section class="interruption1">
+    <section class="interruption1" id="interruption1">
       <div class="background-video-loop">
         <img class="workers-oil-sector-petrochemic-icon1" alt="image"
           src="img/workersoilsectorpetrochemicalindustryoilgasproductiongenerativeai-21@2x.png">
@@ -1278,7 +1283,7 @@
       </div>
     </section>
 
-    <section class="seo-container">
+    <section class="seo-container" id="seo">
       <div class="title21">
         <h2 class="text36">тут потрібно розташовувати заголовок SEO тексту </h2>
       </div>
@@ -1319,7 +1324,7 @@
       </div>
     </section>
 
-    <section class="logo-partners-container">
+    <section class="logo-partners-container" id="partners">
       <div class="logo-partners-container-slid">
         <div class="slider-line partners-slider swiper">
           <div class="partners-slider-wrapper swiper-wrapper">
@@ -1366,7 +1371,7 @@
       </div>
     </section>
 
-    <section class="footer-container">
+    <section class="footer-container" id="footer">
       <div class="head-content">
         <div class="slogan">
           <h2>продаж <br> <span>та</span> доставка <span>Якісного палива</span></h2>
@@ -1377,17 +1382,17 @@
             <div class="separator7"></div>
             <ul class="link-column">
               <li class="icon-and-logo">
-                <a href="#" class="name-link2">головна
+                <a href="index.html" class="name-link2">головна
                   <img class="new-icon18" alt="image" src="img/left-icon12.svg">
                 </a>
               </li>
               <li class="icon-and-logo">
-                <a href="#" class="name-link2">Переваги
+                <a href="#advantages" class="name-link2">Переваги
                   <img class="new-icon18" alt="image" src="img/left-icon12.svg">
                 </a>
               </li>
               <li class="icon-and-logo">
-                <a href="#" class="name-link2">Про компанію
+                <a href="#about-us" class="name-link2">Про компанію
                   <img class="new-icon18" alt="image" src="img/left-icon12.svg">
                 </a>
               </li>
@@ -1397,17 +1402,17 @@
                 </a>
               </li>
               <li class="icon-and-logo">
-                <a href="#" class="name-link2">FAQ
+                <a href="#faq" class="name-link2">FAQ
                   <img class="new-icon18" alt="image" src="img/left-icon12.svg">
                 </a>
               </li>
               <li class="icon-and-logo">
-                <a href="#" class="name-link2">Блог
+                <a href="blog.html" class="name-link2">Блог
                   <img class="new-icon18" alt="image" src="img/left-icon12.svg">
                 </a>
               </li>
               <li class="icon-and-logo">
-                <a href="#" class="name-link2">Контакти
+                <a href="#footer" class="name-link2">Контакти
                   <img class="new-icon18" alt="image" src="img/left-icon12.svg">
                 </a>
               </li>
@@ -1503,6 +1508,8 @@
 
 
   <script src="script/jquery-3.7.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+
   <script src="script/swiper-bundle.min.js"></script>
   <script src="script/script.js"></script>
 </body>
