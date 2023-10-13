@@ -1007,7 +1007,7 @@ body {
     min-width: 1280px;
     max-width: 100%;
     margin: 0 auto;
-    z-index: 15;
+    z-index: 101;
     position: fixed;
     font-size: var(--raleway-13px-regular-size);
     color: var(--petroleum-graphite-200);
@@ -3324,20 +3324,42 @@ body {
 .burger-menu {
     transform: translateY(-150vh);
     position: absolute;
-    width: 100%;
+    width: max-content;
     overflow: hidden;
     z-index: 100;
-    height: 100vh;
-    background: yellow;
+    background: #fff;
     transition: all 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
+.burger-menu-main {
+    display: flex;
+    padding: 24px var(--basic-indentation-gap-16, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--base-source, #FFF);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+.burger-menu-main ul {
+    gap: var(--basic-indentation-gap-16, 16px);
+    display: flex;
+    flex-direction: column;
+}
+.burger-menu-main ul li a{
+    color: var(--base-800, #4B4B4B);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 19.5px */
+    text-decoration: none;
+}
 .burger-menu.open {
-    transform: translateY(0px);
+    transform: translateY(61%);
     transition: all 0.5s;
 }
 
@@ -3357,7 +3379,6 @@ body {
 }
 
 .burger-icon.open {
-    background: #F7BB6F;
     transition: all 0.5s;
 }
 
