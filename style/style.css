@@ -3921,6 +3921,9 @@ video {
     transform: translateY(0);
   }
 
+  .interruption .background-video-loop::after {
+    content: none !important;
+  }
 
 
 
