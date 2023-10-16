@@ -354,3 +354,8 @@ function animateCards3() {
 
 // Вызываем функцию для анимации карточек
 animateCards3();
+
+
+
+
+
