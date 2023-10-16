@@ -14,14 +14,16 @@ const advantages = new Swiper('.advantages-slider', {
       },
 });
 
+
 // Слайдер Новини компанії
-const news = new Swiper('.news-slider', {
-    slidesPerView: "auto",
-    spaceBetween: 24,
-    loop: true,
+const news = new Swiper('.news2-slider', {
+  slidesPerView: "auto",
+  spaceBetween: 24,
+  centeredSlides: true,
+  loop: false, 
     navigation: {
-        nextEl: ".news-next",
-        prevEl: ".news-prev",
+        nextEl: ".news-prev",
+        prevEl: ".news-next",
       },
       pagination: {
         el: ".news-pagination",
@@ -52,11 +54,11 @@ const widget1 = new Swiper('.animation-widget', {
 });
 
 // Слайдер партнеры
-// const partners = new Swiper('.partners-slider', {
-//   slidesPerView: "auto",
-//   spaceBetween: 0,
-//   loop: false, 
-// });
+const partners = new Swiper('.partners-slider', {
+  slidesPerView: "auto",
+  spaceBetween: 0,
+  loop: false, 
+});
 
 // Аккардион
 $(document).ready(() => {
@@ -169,28 +171,30 @@ document.querySelector('.burger-icon').addEventListener('click', () => {
 // --------------------------------------------------------------------
   
 
-
-const animationWidget = document.getElementById('animation-widget1');
-const widgetBar = document.getElementById('widget-bar');
-
-// Функция для проверки прокрутки и управления видимостью
-function handleScroll() {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop >= 600) {
-    animationWidget.style.display = 'none';
-    widgetBar.style.display = 'block';
-  } else {
-    animationWidget.style.display = 'block';
-    widgetBar.style.display = 'none';
+// Для того чтобы наш слайдер работал на ширине меньше 1280px нужно поместить наш код в if ($(window).width() < 1280)
+if ($(window).width() > 1280) {
+  const animationWidget = document.getElementById('animation-widget1');
+  const widgetBar = document.getElementById('widget-bar');
+  
+  // Функция для проверки прокрутки и управления видимостью
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+    if (scrollTop >= 600) {
+      animationWidget.style.display = 'none';
+      widgetBar.style.display = 'block';
+    } else {
+      animationWidget.style.display = 'block';
+      widgetBar.style.display = 'none';
+    }
   }
+  
+  // Вызываем функцию при прокрутке страницы
+  window.addEventListener('scroll', handleScroll);
+  
+  // Вызываем функцию при загрузке страницы для начального состояния
+  window.addEventListener('load', handleScroll);
 }
-
-// Вызываем функцию при прокрутке страницы
-window.addEventListener('scroll', handleScroll);
-
-// Вызываем функцию при загрузке страницы для начального состояния
-window.addEventListener('load', handleScroll);
 
 // --------------------------------------------------------------------
 
