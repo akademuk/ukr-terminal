@@ -34,7 +34,7 @@ const widget = new Swiper('.animation-widget1', {
   slidesPerView: 1,
   loop: false,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   effect: 'fade', // Эффект затухания
@@ -45,18 +45,18 @@ const widget1 = new Swiper('.animation-widget', {
   slidesPerView: 1,
   loop: false,
   autoplay: {
-    delay: 3000,
+    delay: 5000,
     disableOnInteraction: false,
   },
   effect: 'slide', // Эффект затухания
 });
 
 // Слайдер партнеры
-const partners = new Swiper('.partners-slider', {
-  slidesPerView: "auto",
-  spaceBetween: 0,
-  loop: false, 
-});
+// const partners = new Swiper('.partners-slider', {
+//   slidesPerView: "auto",
+//   spaceBetween: 0,
+//   loop: false, 
+// });
 
 // Аккардион
 $(document).ready(() => {
@@ -160,13 +160,11 @@ setInterval(updateCurrentDateTime, 1000);
     link.addEventListener('click', () => {
         document.querySelector('.burger-icon').classList.remove('open');
         document.querySelector('.burger-menu').classList.remove('open');
-        document.querySelector('.body').classList.remove('open');
     });
 });
 document.querySelector('.burger-icon').addEventListener('click', () => {
     document.querySelector('.burger-icon').classList.toggle('open');
     document.querySelector('.burger-menu').classList.toggle('open');
-    document.querySelector('.body').classList.toggle('open');
 });
 // --------------------------------------------------------------------
   
@@ -198,7 +196,20 @@ window.addEventListener('load', handleScroll);
 
 
 
-
+// Бургер меню 2
+document.querySelectorAll('.burger-link-close2').forEach(link => {
+  link.addEventListener('click', () => {
+      document.querySelector('.burger-icon2').classList.remove('open');
+      document.querySelector('.burger-menu2').classList.remove('open');
+      document.querySelector('.body').classList.remove('open');
+  });
+});
+document.querySelector('.burger-icon2').addEventListener('click', () => {
+  document.querySelector('.burger-icon2').classList.toggle('open');
+  document.querySelector('.burger-menu2').classList.toggle('open');
+  document.querySelector('.body').classList.toggle('open');
+});
+// --------------------------------------------------------------------
 
 
 
@@ -272,3 +283,70 @@ elementsToAnimate.forEach((element, index) => {
 
 
   // --------------------------------------------------------------------
+
+
+
+  const seoText = document.querySelector('.seo-text');
+const toggleButton = document.querySelector('.toggle-button');
+
+toggleButton.addEventListener('click', function () {
+  seoText.classList.toggle('collapsed');
+  seoText.classList.toggle('expanded');
+  
+  if (seoText.classList.contains('collapsed')) {
+    toggleButton.textContent = 'згорнути текст';
+  } else {
+    toggleButton.textContent = 'розгорнути текст';
+  }
+});
+
+
+
+
+
+function animateCards2() {
+  const cards = document.querySelectorAll('#swiper-wrapper .swiper-slide');
+
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset;
+
+    cards.forEach(function(card, index) {
+      const rect = card.getBoundingClientRect();
+      const threshold = window.innerHeight / 1.5;  // Используем порог
+
+      if (rect.top <= threshold && rect.bottom >= 0) {
+        card.classList.add('animate__animated', 'animate__fadeInRight');
+        card.style.animationDelay = `${index * 0.5}s`;
+      } else {
+        card.classList.remove('animate__animated', 'animate__fadeInRight');
+      }
+    });
+  });
+}
+
+// Вызываем функцию для анимации карточек
+animateCards2();
+
+
+function animateCards3() {
+  const cards = document.querySelectorAll('#swiper-wrapper2 .swiper-slide');
+
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset;
+
+    cards.forEach(function(card, index) {
+      const rect = card.getBoundingClientRect();
+      const threshold = window.innerHeight / 1.5;  // Используем порог
+
+      if (rect.top <= threshold && rect.bottom >= 0) {
+        card.classList.add('animate__animated', 'animate__fadeInRight');
+        card.style.animationDelay = `${index * 0.5}s`;
+      } else {
+        card.classList.remove('animate__animated', 'animate__fadeInRight');
+      }
+    });
+  });
+}
+
+// Вызываем функцию для анимации карточек
+animateCards3();
