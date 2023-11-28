@@ -171,21 +171,23 @@ document.querySelector('.burger-icon').addEventListener('click', () => {
 // --------------------------------------------------------------------
   
 
-// Для того чтобы наш слайдер работал на ширине меньше 1280px нужно поместить наш код в if ($(window).width() < 1280)
 if ($(window).width() > 1280) {
   const animationWidget = document.getElementById('animation-widget1');
   const widgetBar = document.getElementById('widget-bar');
+  const hiddenItems = document.getElementsByClassName('.hidden-items');
   
   // Функция для проверки прокрутки и управления видимостью
   function handleScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   
     if (scrollTop >= 600) {
-      animationWidget.style.display = 'none';
+      animationWidget.style.opacity = '0';
       widgetBar.style.display = 'block';
+      hiddenItems.addClass = "active";
     } else {
-      animationWidget.style.display = 'block';
+      animationWidget.style.opacity = '1';
       widgetBar.style.display = 'none';
+      hiddenItems.removeClass = "active";
     }
   }
   
@@ -354,8 +356,6 @@ function animateCards3() {
 
 // Вызываем функцию для анимации карточек
 animateCards3();
-
-
 
 
 
